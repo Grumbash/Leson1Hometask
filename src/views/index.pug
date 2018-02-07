@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 html(lang="en")
-head
-	meta(charset="UTF-8")
-	title Document
-body
-	h1 Hello pug!
+	head
+		meta(charset="UTF-8")
+		title Document
+		// build:css css/vendor.css
+		link(rel="stylesheet", href="libs/normalize.css")
+		//- link(rel="stylesheet", href="libs/font-awesome.min.css")
+		// endbuild
+		link(href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet")
+
+		// build:css css/main.css
+		link(rel="stylesheet", href="css/main.css")
+		// endbuild
+	body
+		.wrapper
+			aside.aside
+				header.header
+					i.fas.fa-angle-left.
+					.header__title Orders(10)
+				
+			main.main
+				header.header
+					.header__title.header__title_bot-line Order

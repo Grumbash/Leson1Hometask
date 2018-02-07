@@ -32,12 +32,24 @@ const paths = {
 
 /******* LIBRARIES *******/
 
-// gulp.task('libs', () => {
-// 	return gulp.src([paths.modules + 'normalize.css/normalize.css'])
-// 	.pipe(gulpif([paths.modules + 'font-awesome/css/font-awesome.min.css'], cssmin()) )
-// });
+gulp.task('libs', () => {
+	return  gulp.src([paths.modules + 'normalize.css/normalize.css']);
+			gulp.src([paths.modules + 'font-awesome/css/font-awesome.min.css'])
+			.pipe(gulp.dest([paths.devDir.serv + 'libs']));	
+});
+
+
+/******* FONTS *******/
+
+gulp.task('fonts', () => {
+	return gulp.src([paths.modules + 'font-awesome/fonts/*.*'])
+	.pipe(gulp.dest([paths.devDir.serv + 'fonts']))
+	.pipe(server.stream());
+});
+
 
 /******* PUG *******/
+
 gulp.task('pug', () => {
 	return gulp.src([paths.devDir.views + '**/*.pug'])
 	.pipe(plumber())
@@ -51,6 +63,7 @@ gulp.task('pug', () => {
 
 
 /******* SASS *******/
+
 gulp.task('sass', () => {
   return gulp.src([paths.devDir.styles + '**/*.scss'])
   	.pipe(plumber())
@@ -68,6 +81,7 @@ gulp.task('sass', () => {
 
 
 /******* WATCH *******/
+
 gulp.task('watch', () => {
 	gulp.watch(paths.devDir.views + '**/*.pug', gulp.series('pug'));
 	// gulp.watch('content.json', gulp.series('pug'));
@@ -75,8 +89,8 @@ gulp.task('watch', () => {
 });
 
 
-
 /******* SERVER *******/
+
 gulp.task('server', () => {
 	server.init({
 		port: 3000,
@@ -94,12 +108,14 @@ gulp.task('server', () => {
 
 
 /******* CLEAN *******/
+
 gulp.task('clean', function(cb) {
 	rimraf(paths.distDir, cb);
 });
 
 
 /******* CSS *******/
+
 gulp.task('build', () => {
 	return gulp.src(paths.devDir.serv + '*.html')
 		.pipe( useref() )
@@ -109,7 +125,7 @@ gulp.task('build', () => {
 
 
 //default
-gulp.task('default', gulp.parallel('pug', 'server', 'watch', 'sass'));
+gulp.task('default',gulp.series('libs', 'fonts', gulp.parallel('pug', 'server', 'watch', 'sass')));
 
 //production 
 gulp.task('prod', gulp.series('clean', 'build'));

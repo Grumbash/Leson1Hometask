@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html lang="en"></html>
-<head>
-  <meta charset="UTF-8"/>
-  <title>Document</title>
-</head>
-<body>
-  <h1>Hello pug!</h1>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <!-- build:css css/vendor.css-->
+    <link rel="stylesheet" href="libs/normalize.css"/>
+    <!-- endbuild-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
+    <!-- build:css css/main.css-->
+    <link rel="stylesheet" href="css/main.css"/>
+    <!-- endbuild-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside class="aside">
+        <header class="header"><i class="fas fa-angle-left"></i>
+          <div class="header__title">Orders(10)</div>
+        </header>
+      </aside>
+      <main class="main">
+        <header class="header">
+          <div class="header__title header__title_bot-line">Order</div>
+        </header>
+      </main>
+    </div>
+  </body>
+</html>

@@ -97,8 +97,7 @@ gulp.task('server', () => {
 		server: {
 			baseDir: paths.devDir.serv
 		},
-		notify: false,
-		open: false
+		notify: false
 	});
 });
 

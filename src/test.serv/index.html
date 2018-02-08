@@ -4,9 +4,9 @@
     <meta charset="UTF-8"/>
     <title>Document</title>
     <!-- build:css css/vendor.css-->
+    <link rel="stylesheet" href="libs/font-awesome.min.css"/>
     <link rel="stylesheet" href="libs/normalize.css"/>
     <!-- endbuild-->
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"/>
     <!-- build:css css/main.css-->
     <link rel="stylesheet" href="css/main.css"/>
     <!-- endbuild-->
@@ -14,14 +14,196 @@
   <body>
     <div class="wrapper">
       <aside class="aside">
-        <header class="header"><i class="fas fa-angle-left"></i>
-          <div class="header__title">Orders(10)</div>
+        <header class="header header_aside-height">
+          <div class="header__wrap">
+            <button class="header__btn-back"><i class="fa fa-angle-left"></i></button>
+            <div class="header__title">Orders(10)</div>
+          </div>
+          <form class="search-form header__form" action="#">
+            <input class="search-form__ipt search-form__ipt_search" type="serch" placeholder="Поиск"/>
+            <div class="search-form__btn-wrap">
+              <button class="search-form__btn search-form__btn_search" type="serch"><i class="fa fa-search"></i></button>
+              <button class="search-form__btn search-form__btn_refresh" type="button"><i class="fa fa-refresh"></i></button>
+            </div>
+          </form>
         </header>
+        <ul class="orders-list">
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 7991</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6751</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6941</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6759</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6754</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6757</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6761</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 9751</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6711</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+          <li class="orders-list__item">
+            <div class="orders-list__row orders-list__row_first">
+              <p class="orders-list__title">Order 6756</p>
+              <p class="orders-list__data">21.01.2016</p>
+            </div>
+            <div class="orders-list__row orders-list__row_second"><span class="orders-list__desc">Lorem ipsum dolor sit.</span><span class="orders-list__status">In time</span></div>
+            <div class="orders-list__row orders-list__row_third">
+              <p class="orders-list__info">Shipped: 21 янв. 2016 г.</p>
+            </div>
+          </li>
+        </ul>
+        <footer class="footer footer_aside">
+          <button class="footer__btn footer__btn_filter"><i class="fa fa-filter"></i></button>
+          <button class="footer__btn footer__btn_list"><i class="fa fa-list"></i></button>
+        </footer>
       </aside>
       <main class="main">
-        <header class="header">
+        <header class="header header_main-height">
           <div class="header__title header__title_bot-line">Order</div>
         </header>
+        <section class="section main__section_order">
+          <h1 class="section__order-title"><span class="section__order-title__title">Order 7991</span><span class="section__order-title__price">150 935, 13 <sub>eur</sub></span></h1>
+          <ul class="section-info"> 
+            <li class="section-info__customer section-info__item">Customer: Tortuga Restaurante</li>
+            <li class="section-info__ordered section-info__item">Ordered: 18 сент. 2016 г.</li>
+            <li class="section-info__shipped section-info__item">Shipped: 26 сент. 2016 г.</li>
+          </ul>
+          <ul class="section-stages">
+            <li class="section-stages__shipping section-stages__item">
+              <button class="section-stages__switch"><i class="fa fa-car"></i></button>
+            </li>
+            <li class="section-stages__customer section-stages__item">
+              <button class="section-stages__switch"><i class="fa fa-user-o"></i></button>
+            </li>
+          </ul>
+        </section>
+        <section class="section full-info">
+          <h2 class="full-info__title">Shipping Address</h2>
+          <ul class="full-info__post-info postinfo">
+            <li class="postinfo__item">Name: ExcllentParcel</li>
+            <li class="postinfo__item">Street: some street</li>
+            <li class="postinfo__item">ZIP Code/City: N170AA London</li>
+            <li class="postinfo__item">Region: Greate London</li>
+            <li class="postinfo__item">United Kingdom</li>
+          </ul>
+        </section>
+        <section class="section section-table">
+          <h2 class="section-table__title">Line Item(4)</h2>
+          <table class="section-table__table">
+            <tbody class="section-table__table-body">
+              <tr class="section-table__table-row">
+                <td class="section-table__table-column">Product</td>
+                <td class="section-table__table-column">Unit Price</td>
+                <td class="section-table__table-column">Quanitity</td>
+                <td class="section-table__table-column">Total</td>
+              </tr>
+              <tr class="section-table__table-row">
+                <td class="section-table__table-column">Lorem ipsum.</td>
+                <td class="section-table__table-column">65.5 EUR  </td>
+                <td class="section-table__table-column">899</td>
+                <td class="section-table__table-column">59.41 EUR</td>
+              </tr>
+              <tr class="section-table__table-row">
+                <td class="section-table__table-column">Lorem ipsum.</td>
+                <td class="section-table__table-column">14.77 EUR  </td>
+                <td class="section-table__table-column">2367</td>
+                <td class="section-table__table-column">34.243 EUR</td>
+              </tr>
+              <tr class="section-table__table-row">
+                <td class="section-table__table-column">Lorem ipsum dolor.</td>
+                <td class="section-table__table-column">61.69 EUR  </td>
+                <td class="section-table__table-column">867</td>
+                <td class="section-table__table-column">53.154 EUR</td>
+              </tr>
+              <tr class="section-table__table-row">
+                <td class="section-table__table-column">Lorem ipsum.</td>
+                <td class="section-table__table-column">30.7 EUR</td>
+                <td class="section-table__table-column">1060</td>
+                <td class="section-table__table-column">3.542 EUR</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <footer class="footer footer_main">
+          <button class="footer__btn footer__btn_email"><i class="fa fa-envelope-o"></i></button>
+        </footer>
       </main>
     </div>
   </body>

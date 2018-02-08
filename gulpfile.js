@@ -30,21 +30,21 @@ const paths = {
 /*******************************************/
 
 
-/******* LIBRARIES *******/
-
-gulp.task('libs', () => {
-	return  gulp.src([paths.modules + 'normalize.css/normalize.css']);
-			gulp.src([paths.modules + 'font-awesome/css/font-awesome.min.css'])
-			.pipe(gulp.dest([paths.devDir.serv + 'libs']));	
-});
-
-
 /******* FONTS *******/
 
 gulp.task('fonts', () => {
 	return gulp.src([paths.modules + 'font-awesome/fonts/*.*'])
 	.pipe(gulp.dest([paths.devDir.serv + 'fonts']))
 	.pipe(server.stream());
+});
+
+
+/******* LIBRARIES *******/
+
+gulp.task('libs', () => {
+	return  gulp.src([paths.modules + 'normalize.css/normalize.css']);
+			gulp.src([paths.modules + 'font-awesome/css/font-awesome.min.css'])
+			.pipe(gulp.dest([paths.devDir.serv + 'libs']));	
 });
 
 
@@ -65,7 +65,7 @@ gulp.task('pug', () => {
 /******* SASS *******/
 
 gulp.task('sass', () => {
-  return gulp.src([paths.devDir.styles + '**/*.scss'])
+  return gulp.src([paths.devDir.styles + 'main.scss'])
   	.pipe(plumber())
   	.pipe(map.init())
   	.pipe(glob())

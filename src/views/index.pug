@@ -4,10 +4,9 @@ html(lang="en")
 		meta(charset="UTF-8")
 		title Document
 		// build:css css/vendor.css
+		link(rel="stylesheet", href="libs/font-awesome.min.css")
 		link(rel="stylesheet", href="libs/normalize.css")
-		//- link(rel="stylesheet", href="libs/font-awesome.min.css")
 		// endbuild
-		link(href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet")
 
 		// build:css css/main.css
 		link(rel="stylesheet", href="css/main.css")
@@ -15,10 +14,102 @@ html(lang="en")
 	body
 		.wrapper
 			aside.aside
-				header.header
-					i.fas.fa-angle-left.
-					.header__title Orders(10)
-				
+				header.header.header_aside-height
+					.header__wrap
+						button.header__btn-back
+							i.fa.fa-angle-left
+						.header__title Orders(10)
+					form(action="#").search-form.header__form
+						input(type="serch" placeholder="Поиск").search-form__ipt.search-form__ipt_search
+						.search-form__btn-wrap
+							button(type="serch").search-form__btn.search-form__btn_search
+								i.fa.fa-search
+							button(type="button").search-form__btn.search-form__btn_refresh
+								i.fa.fa-refresh
+					//- поменять на объект
+					- var items = ['7991', '6751', '6941', '6759', '6754', '6757', '6761', '9751', '6711', '6756'];
+				ul.orders-list
+					each item in items 
+						li.orders-list__item
+							.orders-list__row.orders-list__row_first
+								p.orders-list__title= `Order ${item}`
+								p.orders-list__data 21.01.2016
+							.orders-list__row.orders-list__row_second
+								span.orders-list__desc Lorem ipsum dolor sit.
+								span.orders-list__status In time
+							.orders-list__row.orders-list__row_third
+								p.orders-list__info Shipped: 21 янв. 2016 г.
+				footer.footer.footer_aside
+					button.footer__btn.footer__btn_filter
+						i.fa.fa-filter
+					button.footer__btn.footer__btn_list
+						i.fa.fa-list
 			main.main
-				header.header
+				header.header.header_main-height
 					.header__title.header__title_bot-line Order
+				section.section.main__section_order
+					h1.section__order-title
+						span.section__order-title__title Order 7991
+						span.section__order-title__price 150 935, 13 
+							sub eur
+					ul.section-info 
+						li.section-info__customer.section-info__item
+							|Customer: Tortuga Restaurante
+						li.section-info__ordered.section-info__item
+							|Ordered: 18 сент. 2016 г.
+						li.section-info__shipped.section-info__item
+							|Shipped: 26 сент. 2016 г.
+					ul.section-stages
+						li.section-stages__shipping.section-stages__item
+							button.section-stages__switch
+								i.fa.fa-car
+						li.section-stages__customer.section-stages__item
+							button.section-stages__switch
+								i.fa.fa-user-o
+				section.section.full-info
+					h2.full-info__title Shipping Address
+					ul.full-info__post-info.postinfo
+						- 
+							var obj = {
+								name: 'Name: ExcllentParcel',
+								street: 'Street: some street',
+								zip_code: 'ZIP Code/City: N170AA London',
+								region: 'Region: Greate London',
+								counry: 'United Kingdom'
+							}
+						each prop in obj
+							li.postinfo__item=prop
+				section.section.section-table
+					h2.section-table__title Line Item(4)
+					table.section-table__table
+						tbody.section-table__table-body
+							tr.section-table__table-row
+								td.section-table__table-column Product
+								td.section-table__table-column Unit Price
+								td.section-table__table-column Quanitity
+								td.section-table__table-column Total
+							tr.section-table__table-row
+								td.section-table__table-column Lorem ipsum.
+								td.section-table__table-column 65.5 EUR  
+								td.section-table__table-column 899
+								td.section-table__table-column 59.41 EUR
+							tr.section-table__table-row
+								td.section-table__table-column Lorem ipsum.
+								td.section-table__table-column 14.77 EUR  
+								td.section-table__table-column 2367
+								td.section-table__table-column 34.243 EUR
+							tr.section-table__table-row
+								td.section-table__table-column Lorem ipsum dolor.
+								td.section-table__table-column 61.69 EUR  
+								td.section-table__table-column 867
+								td.section-table__table-column 53.154 EUR
+							tr.section-table__table-row
+								td.section-table__table-column Lorem ipsum.
+								td.section-table__table-column 30.7 EUR
+								td.section-table__table-column 1060
+								td.section-table__table-column 3.542 EUR
+
+
+				footer.footer.footer_main
+					button.footer__btn.footer__btn_email
+						i.fa.fa-envelope-o

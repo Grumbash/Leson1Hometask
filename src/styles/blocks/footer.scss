@@ -1,0 +1,31 @@
+.footer{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	background-color: #191934;
+	height: 2em;
+	&__btn{
+		border: none;
+		background-color: transparent;
+		padding: .4em .7em;
+		transition: .3s ease;
+		&:hover{
+			background-color: #7575bd;
+		}
+	}
+	&_aside{
+		width: 16%;
+		position: fixed;
+		bottom: 0;
+		left: 10vw;
+	}
+	&_main{
+		width: 64%;
+		position: fixed;
+		bottom: 0;
+		right: 10vw;
+	}
+	.fa{
+		color: #fff;
+	}
+}

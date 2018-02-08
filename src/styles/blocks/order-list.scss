@@ -1,0 +1,38 @@
+.orders-list{
+	padding: 0;
+	height: 100vh;
+	position: relative;
+	overflow: scroll;
+	margin-top: 4em;
+	background-color: #fff;
+	&__item{
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid #ddd;
+		padding: .25em .5em; 
+		&:hover{
+			background-color: #F0F8FF;
+			cursor: pointer;
+		}
+		&:last-child{
+			border-bottom: 1px solid #ddd;
+		}
+	}
+	&__row{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__title{
+		font-size: 1.1em;
+
+	}
+	&__data{
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+	&__status{
+		color: #7CFC00;
+		font-weight: 300;
+	}
+}

@@ -13,14 +13,17 @@ const gulp = require('gulp'),
       rimraf = require('rimraf'),
       useref = require('gulp-useref'),
       gulpif = require('gulp-if'),
-      cssmin = require('gulp-clean-css');
+      cssmin = require('gulp-clean-css'),
+      babel = require('gulp-babel'),
+      concat = require('gulp-concat');
 
 const paths = {
 	distDir: 'dist/',
 	devDir: {
 		views: 'src/views/',
 		styles:'src/styles/',
-		serv: 'src/test.serv/'
+		serv: 'src/test.serv/',
+		js: 'src/js/'
 	},
 	modules: 'node_modules/'
 }
@@ -85,6 +88,22 @@ gulp.task('sass', () => {
 });
 
 
+/******* JS *******/
+
+gulp.task('js', () => {
+  return gulp.src([paths.devDir.js + '**/*.js'])
+  	// .pipe(plumber())
+    .pipe(map.init())
+    .pipe(babel({
+		presets: ['es2015']
+	}))
+    .pipe(concat("main.js"))
+    .pipe(map.write())
+    .pipe(gulp.dest([paths.devDir.serv + 'js']))
+    .pipe(server.stream());
+});
+
+
 /******* WATCH *******/
 
 gulp.task('watch', () => {
@@ -129,7 +148,7 @@ gulp.task('build', () => {
 
 
 //default
-gulp.task('default',gulp.series('libs', 'fonts', gulp.parallel('pug', 'server', 'watch', 'sass')));
+gulp.task('default',gulp.series('libs', 'fonts', gulp.parallel('js', 'pug', 'server', 'watch', 'sass')));
 
 //production 
 gulp.task('prod', gulp.series('clean', 'build'));

@@ -39,7 +39,7 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('fontsProd', () => {
-	return gulp.src([paths.devDir.serv + 'fonts'])
+	return gulp.src([paths.devDir.serv + 'fonts/*.*'])
 	.pipe(gulp.dest([paths.distDir + 'fonts']));
 });
 

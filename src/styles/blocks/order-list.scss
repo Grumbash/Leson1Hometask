@@ -9,11 +9,14 @@
 		display: flex;
 		flex-direction: column;
 		border-top: 1px solid #ddd;
-		padding: .25em .5em; 
+		padding: .25em .5em;
 		&:hover{
 			background-color: #F0F8FF;
 			cursor: pointer;
 		}
+	&__active{
+		background-color: #F0F8FF;
+	}
 		&:last-child{
 			border-bottom: 1px solid #ddd;
 		}

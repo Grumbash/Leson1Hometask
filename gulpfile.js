@@ -22,14 +22,14 @@ const paths = {
 	devDir: {
 		views: 'src/views/',
 		styles:'src/styles/',
-		serv: 'src/test.serv/',
+		serv: 'test.serv/',
 		js: 'src/js/'
 	},
 	modules: 'node_modules/'
 }
 
 /*******************************************/
-			// DEVELOPER TASKS //			
+			// DEVELOPER TASKS //
 /*******************************************/
 
 
@@ -52,7 +52,7 @@ gulp.task('fontsProd', () => {
 gulp.task('libs', () => {
 	return  gulp.src([paths.modules + 'normalize.css/normalize.css']);
 			gulp.src([paths.modules + 'font-awesome/css/font-awesome.min.css'])
-			.pipe(gulp.dest([paths.devDir.serv + 'libs']));	
+			.pipe(gulp.dest([paths.devDir.serv + 'libs']));
 });
 
 
@@ -62,7 +62,7 @@ gulp.task('pug', () => {
 	return gulp.src([paths.devDir.views + '**/*.pug'])
 	.pipe(plumber())
 	.pipe(pug({
-		// locals : JSON.parse(fs.readFileSync('content.json', 'utf8')), потом доработаю 
+		// locals : JSON.parse(fs.readFileSync('content.json', 'utf8')), потом доработаю
 		pretty: true
 	}))
 	.pipe(gulp.dest(paths.devDir.serv))
@@ -92,7 +92,7 @@ gulp.task('sass', () => {
 
 gulp.task('js', () => {
   return gulp.src([paths.devDir.js + '**/*.js'])
-  	// .pipe(plumber())
+  	.pipe(plumber())
     .pipe(map.init())
     .pipe(babel({
 		presets: ['es2015']
@@ -108,7 +108,7 @@ gulp.task('js', () => {
 
 gulp.task('watch', () => {
 	gulp.watch(paths.devDir.views + '**/*.pug', gulp.series('pug'));
-	// gulp.watch('content.json', gulp.series('pug'));
+	gulp.watch(paths.devDir.js + '**/*.js', gulp.series('js'));
 	gulp.watch(paths.devDir.styles + '**/*.scss', gulp.series('sass'));
 });
 
@@ -126,7 +126,7 @@ gulp.task('server', () => {
 });
 
 /*******************************************/
-			// PRODUCTION TASKS //			
+			// PRODUCTION TASKS //
 /*******************************************/
 
 
@@ -150,5 +150,5 @@ gulp.task('build', () => {
 //default
 gulp.task('default',gulp.series('libs', 'fonts', gulp.parallel('js', 'pug', 'server', 'watch', 'sass')));
 
-//production 
+//production
 gulp.task('prod', gulp.series('clean', 'build'));

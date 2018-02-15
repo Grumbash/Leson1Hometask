@@ -58,17 +58,6 @@ html(lang="en")
 				section.section.full-info
 					h2.full-info__title Shipping Address
 					ul.full-info__post-info.postinfo
-						-
-							var obj = {
-								name: 'Name: ExcllentParcel',
-								street: 'Street: some street',
-								zip_code: 'ZIP Code/City: N170AA London',
-								region: 'Region: Greate London',
-								counry: 'United Kingdom'
-							}
-						each prop in obj
-							li.postinfo__item
-									span.postinfo__span= prop
 				section.section.section-table
 					h2.section-table__title Line Item(4)
 					table.section-table__table

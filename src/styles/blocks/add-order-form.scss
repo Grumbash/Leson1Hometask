@@ -1,0 +1,38 @@
+.add-order-form{
+  position: absolute;
+  width: 80vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__form{
+    background-color: #fff;
+    position: relative;
+		margin: 0 auto;
+  }
+  &__fieldset{
+    display: inline-flex;
+		border: 1px solid #ddd;
+		z-index: 100;
+    .section{
+      padding: 0 1rem;
+    }
+  }
+  &__submit{
+    display: flex;
+    justify-content: center;
+  }
+  &__close{
+    background-color: #191934;
+    color: #fff;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+		width: 30px;
+		height: 30px;
+    border-radius: 50%;
+  }
+}

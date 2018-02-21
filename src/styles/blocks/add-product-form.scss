@@ -1,0 +1,41 @@
+.add-product-form{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80vw;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, .5);
+	&__form{
+		min-width: 28%;
+		border: 1px solid #ddd;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+	}
+	&__close{
+		background-color: #191934;
+		color: #fff;
+		border: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translate(50%, -50%);
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+	&__label{
+		box-sizing: border-box;
+		padding: .5rem 1rem;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__input_submit{
+		margin: 1rem 0;
+	}
+}

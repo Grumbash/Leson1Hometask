@@ -1,6 +1,8 @@
 //variables
 @import "helpers/variables.scss";
 
+//support-styles
+@import "helpers/support-styles.scss";
+@import "helpers/footer-height-block.scss";
 
 @import "blocks/**/*";
-

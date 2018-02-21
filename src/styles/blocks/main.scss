@@ -2,7 +2,7 @@
 	width: 80%;
 	height: 100vh;
 	margin-bottom: 2em;
-	overflow: scroll;
+	overflow-y: auto;
 	&__section_order{
 		background-color: #F0F8FF;
 		padding: 1em;

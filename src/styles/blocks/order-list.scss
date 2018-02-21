@@ -1,8 +1,8 @@
 .orders-list{
 	padding: 0;
-	height: 100vh;
+	height: 90vh;
 	position: relative;
-	overflow: scroll;
+	overflow-y: auto;
 	margin-top: 4em;
 	background-color: #fff;
 	&__item{

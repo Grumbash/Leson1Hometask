@@ -17,7 +17,7 @@
         <header class="header header_aside-height">
           <div class="header__wrap">
             <button class="header__btn-back"><i class="fa fa-angle-left"></i></button>
-            <div class="header__title">Orders(10)</div>
+            <div class="header__title">Orders</div>
           </div>
           <form class="search-form header__form" action="#">
             <input class="search-form__ipt search-form__ipt_search" type="serch" placeholder="Поиск" autofocus="autofocus"/>
@@ -29,6 +29,7 @@
         </header>
         <ul class="orders-list"></ul>
         <footer class="footer footer_aside">
+          <button class="footer__btn footer__btn_add-order"><i class="fa fa-plus"></i></button>
           <button class="footer__btn footer__btn_filter"><i class="fa fa-filter"></i></button>
           <button class="footer__btn footer__btn_list"><i class="fa fa-list"></i></button>
         </footer>
@@ -38,7 +39,7 @@
           <div class="header__title header__title_bot-line">Order</div>
         </header>
         <section class="section main__section_order">
-          <h1 class="section__order-title"><span class="section__order-title__title">Order 7991</span><span class="section__order-title__price">150 935, 13<sub>eur</sub></span></h1>
+          <h1 class="section__order-title"><span class="section__order-title__title">Order 7991</span><span class="section__order-title__price">150 935, 13<sub>  eur</sub></span></h1>
           <ul class="section-info">
             <li class="section-info__customer section-info__item">Customer: Tortuga Restaurante</li>
             <li class="section-info__ordered section-info__item">Ordered: 18 сент. 2016 г.</li>
@@ -46,59 +47,135 @@
           </ul>
           <ul class="section-stages">
             <li class="section-stages__shipping section-stages__item">
-              <button class="section-stages__switch"><i class="fa fa-truck"></i></button>
+              <button class="section-stages__switch section-stages__btn_shippingAdress"><i class="fa fa-truck"></i></button>
             </li>
             <li class="section-stages__customer section-stages__item">
-              <button class="section-stages__switch"><i class="fa fa-user-o"></i></button>
+              <button class="section-stages__switch section-stages__btn_customerInfo"><i class="fa fa-user-o"></i></button>
+            </li>
+            <li class="section-stages__map section-stages__item">
+              <button class="section-stages__switch section-stages__btn_map"><i class="fa fa-globe"></i></button>
             </li>
           </ul>
         </section>
-        <section class="section full-info">
-          <h2 class="full-info__title">Shipping Address</h2>
+        <section class="section full-info full-info_post-info">
+          <h2 class="full-info__title full-info__title_post-info">Shipping Address</h2>
           <ul class="full-info__post-info postinfo"></ul>
         </section>
+        <section class="section full-info full-info_customer-info hide">
+          <h2 class="full-info__title full-info__title_customer-info">Customer Info</h2>
+          <ul class="full-info__customer-info postinfo"></ul>
+        </section>
+        <section class="section full-info full-info_map hide">
+          <h2 class="full-info__title full-info__title_map">Map</h2><a class="full-info__map" href="https://yandex.ru/maps/?um=constructor%3A2c46c8051d4bf3a6e9658a8c45b5f4dad350481617a4dabf0228c6e3433a3ddc&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A2c46c8051d4bf3a6e9658a8c45b5f4dad350481617a4dabf0228c6e3433a3ddc&amp;width=600&amp;height=300&amp;lang=ru_RU" alt="Map" style="border: 0;"/></a>
+        </section>
         <section class="section section-table">
-          <h2 class="section-table__title">Line Item(4)</h2>
-          <table class="section-table__table">
-            <tbody class="section-table__table-body">
-              <tr class="section-table__table-row">
-                <td class="section-table__table-column">Product</td>
-                <td class="section-table__table-column">Unit Price</td>
-                <td class="section-table__table-column">Quanitity</td>
-                <td class="section-table__table-column">Total</td>
-              </tr>
-              <tr class="section-table__table-row">
-                <td class="section-table__table-column">Lorem ipsum.</td>
-                <td class="section-table__table-column">65.5 EUR</td>
-                <td class="section-table__table-column">899</td>
-                <td class="section-table__table-column">59.41 EUR</td>
-              </tr>
-              <tr class="section-table__table-row">
-                <td class="section-table__table-column">Lorem ipsum.</td>
-                <td class="section-table__table-column">14.77 EUR</td>
-                <td class="section-table__table-column">2367</td>
-                <td class="section-table__table-column">34.243 EUR</td>
-              </tr>
-              <tr class="section-table__table-row">
-                <td class="section-table__table-column">Lorem ipsum dolor.</td>
-                <td class="section-table__table-column">61.69 EUR</td>
-                <td class="section-table__table-column">867</td>
-                <td class="section-table__table-column">53.154 EUR</td>
-              </tr>
-              <tr class="section-table__table-row">
-                <td class="section-table__table-column">Lorem ipsum.</td>
-                <td class="section-table__table-column">30.7 EUR</td>
-                <td class="section-table__table-column">1060</td>
-                <td class="section-table__table-column">3.542 EUR</td>
-              </tr>
-            </tbody>
-          </table>
+          <h2 class="section-table__title">Products</h2>
+          <div class="section-table__btn-row">
+            <button class="section-table__add-product"><i class="fa fa-plus"></i></button>
+          </div>
+          <table class="section-table__table"></table>
         </section>
         <footer class="footer footer_main">
+          <button class="footer__btn footer__btn_trash"><i class="fa fa-trash"></i></button>
           <button class="footer__btn footer__btn_email"><i class="fa fa-envelope-o"></i></button>
         </footer>
       </main>
+      <section class="section add-order-form hide">
+        <form class="add-order-form__form add-order-form__fieldset">
+          <button class="add-order-form__close" type="button"><i class="fa fa-close"></i></button>
+          <section class="add-order-form__summary section">
+            <h2>Summary</h2>
+            <p class="add-order-form__row">
+              <label>Customer name
+                <input type="text" value="Steve" id="customer"/>
+              </label>
+            </p>
+          </section>
+          <section class="add-order-form__shipTo section">
+            <h2>ShipTo</h2>
+            <p class="add-order-form__row">
+              <label>Company Name
+                <input type="text" value="Apple" id="name"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>Company Address 
+                <input type="text" value="Cupertino, CA 95014" id="shipToAddress"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>ZIP
+                <input type="number" value="12345" id="ZIP"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>Region
+                <input type="text" value="California" id="region"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>Country
+                <input type="text" value="USA" id="country"/>
+              </label>
+            </p>
+            <p class="add-order-form__row add-order-form__submit">
+              <button type="submit" value="Отправить" id="submit">Add Order</button>
+            </p>
+          </section>
+          <section class="add-order-form__customer-info section">
+            <h2>Customer Info</h2>
+            <p class="add-order-form__row">
+              <label>First Name
+                <input type="text" value="Steve" id="firstName"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>Last Name
+                <input type="text" value="Jobs" id="lastName"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>Address
+                <input type="text" value="450 Serra Mall, Stanford" id="customerInfoAddress"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>Phone
+                <input type="phone" value="(408) 996–1010" id="phone"/>
+              </label>
+            </p>
+            <p class="add-order-form__row">
+              <label>E-mail
+                <input type="email" value="apple@icloud.com" id="email"/>
+              </label>
+            </p>
+          </section>
+        </form>
+      </section>
+      <section class="section add-product-form hide">
+        <form class="add-product-form__form">
+          <h2 class="add-product-form__title">Fill the fields</h2>
+          <label class="add-product-form__label">Product
+            <input class="add-product-form__input add-product-form__input_Product" type="text" value="Pineaplle" id="poductName"/>
+          </label>
+          <label class="add-product-form__label">Price
+            <input class="add-product-form__input add-product-form__input_Price" type="number" value="13" id="poductPrice"/>
+          </label>
+          <label class="add-product-form__label">Currency
+            <input class="add-product-form__input add-product-form__input_Currency" type="text" value="EUR" id="poductCurrency"/>
+          </label>
+          <label class="add-product-form__label">Quanitity
+            <input class="add-product-form__input add-product-form__input_Quanitity" type="text" value="3" id="poductQuanitity"/>
+          </label>
+          <label class="add-product-form__label">Total
+            <input class="add-product-form__input add-product-form__input_Total" type="text" value="39" id="poductTotal"/>
+          </label>
+          <button class="add-product-form__input add-product-form__input_submit" type="button" id="poductSubmit">Add product</button>
+          <button class="add-product-form__close" type="button" id="poductCloses"><i class="fa fa-close"></i></button>
+        </form>
+      </section>
     </div>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

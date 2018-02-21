@@ -18,7 +18,7 @@ html(lang="en")
 					.header__wrap
 						button.header__btn-back
 							i.fa.fa-angle-left
-						.header__title Orders(10)
+						.header__title Orders
 					form(action="#").search-form.header__form
 						input(type="serch" placeholder="Поиск" autofocus).search-form__ipt.search-form__ipt_search
 						.search-form__btn-wrap
@@ -26,9 +26,10 @@ html(lang="en")
 								i.fa.fa-search
 							button(type="button").search-form__btn.search-form__btn_refresh
 								i.fa.fa-refresh
-					//- поменять на объект
 				ul.orders-list
 				footer.footer.footer_aside
+					button.footer__btn.footer__btn_add-order
+						i.fa.fa-plus
 					button.footer__btn.footer__btn_filter
 						i.fa.fa-filter
 					button.footer__btn.footer__btn_list
@@ -40,7 +41,7 @@ html(lang="en")
 					h1.section__order-title
 						span.section__order-title__title Order 7991
 						span.section__order-title__price 150 935, 13
-							sub eur
+							sub   eur
 					ul.section-info
 						li.section-info__customer.section-info__item
 							|Customer: Tortuga Restaurante
@@ -50,44 +51,98 @@ html(lang="en")
 							|Shipped: 26 сент. 2016 г.
 					ul.section-stages
 						li.section-stages__shipping.section-stages__item
-							button.section-stages__switch
+							button.section-stages__switch.section-stages__btn_shippingAdress
 								i.fa.fa-truck
 						li.section-stages__customer.section-stages__item
-							button.section-stages__switch
+							button.section-stages__switch.section-stages__btn_customerInfo
 								i.fa.fa-user-o
-				section.section.full-info
-					h2.full-info__title Shipping Address
+						li.section-stages__map.section-stages__item
+							button.section-stages__switch.section-stages__btn_map
+								i.fa.fa-globe
+				section.section.full-info.full-info_post-info
+					h2.full-info__title.full-info__title_post-info Shipping Address
 					ul.full-info__post-info.postinfo
+				section.section.full-info.full-info_customer-info.hide
+					h2.full-info__title.full-info__title_customer-info Customer Info
+					ul.full-info__customer-info.postinfo
+				section.section.full-info.full-info_map.hide
+					h2.full-info__title.full-info__title_map Map
+					a(href='https://yandex.ru/maps/?um=constructor%3A2c46c8051d4bf3a6e9658a8c45b5f4dad350481617a4dabf0228c6e3433a3ddc&source=constructorStatic', target='_blank').full-info__map
+						img(src='https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A2c46c8051d4bf3a6e9658a8c45b5f4dad350481617a4dabf0228c6e3433a3ddc&width=600&height=300&lang=ru_RU', alt='Map', style='border: 0;')
 				section.section.section-table
-					h2.section-table__title Line Item(4)
+					h2.section-table__title Products
+					.section-table__btn-row
+						button.section-table__add-product
+							i.fa.fa-plus
 					table.section-table__table
-						tbody.section-table__table-body
-							tr.section-table__table-row
-								td.section-table__table-column Product
-								td.section-table__table-column Unit Price
-								td.section-table__table-column Quanitity
-								td.section-table__table-column Total
-							tr.section-table__table-row
-								td.section-table__table-column Lorem ipsum.
-								td.section-table__table-column 65.5 EUR
-								td.section-table__table-column 899
-								td.section-table__table-column 59.41 EUR
-							tr.section-table__table-row
-								td.section-table__table-column Lorem ipsum.
-								td.section-table__table-column 14.77 EUR
-								td.section-table__table-column 2367
-								td.section-table__table-column 34.243 EUR
-							tr.section-table__table-row
-								td.section-table__table-column Lorem ipsum dolor.
-								td.section-table__table-column 61.69 EUR
-								td.section-table__table-column 867
-								td.section-table__table-column 53.154 EUR
-							tr.section-table__table-row
-								td.section-table__table-column Lorem ipsum.
-								td.section-table__table-column 30.7 EUR
-								td.section-table__table-column 1060
-								td.section-table__table-column 3.542 EUR
 				footer.footer.footer_main
+					button.footer__btn.footer__btn_trash
+						i.fa.fa-trash
 					button.footer__btn.footer__btn_email
 						i.fa.fa-envelope-o
+			section.section.add-order-form.hide
+				form.add-order-form__form.add-order-form__fieldset
+					button(type="button").add-order-form__close
+							i.fa.fa-close
+					section.add-order-form__summary.section
+						h2 Summary
+						p.add-order-form__row
+							label Customer name
+								input(type="text" value='Steve')#customer
+					section.add-order-form__shipTo.section
+						h2 ShipTo
+						p.add-order-form__row
+							label Company Name
+								input(type="text" value="Apple")#name
+						p.add-order-form__row
+							label Company Address 
+								input(type="text" value="Cupertino, CA 95014")#shipToAddress
+						p.add-order-form__row
+							label ZIP
+								input(type="number" value="12345")#ZIP
+						p.add-order-form__row
+							label Region
+								input(type="text" value="California")#region
+						p.add-order-form__row
+							label Country
+								input(type="text" value="USA")#country
+						p.add-order-form__row.add-order-form__submit
+							button(type="submit" value="Отправить")#submit
+								|Add Order
+					section.add-order-form__customer-info.section
+						h2 Customer Info
+						p.add-order-form__row
+							label First Name
+								input(type="text" value="Steve")#firstName
+						p.add-order-form__row
+							label Last Name
+								input(type="text" value="Jobs")#lastName
+						p.add-order-form__row
+							label Address
+								input(type="text" value="450 Serra Mall, Stanford")#customerInfoAddress
+						p.add-order-form__row
+							label Phone
+								input(type="phone" value="(408) 996–1010")#phone
+						p.add-order-form__row
+							label E-mail
+								input(type="email" value="apple@icloud.com")#email
+			section.section.add-product-form.hide
+				form.add-product-form__form
+					h2.add-product-form__title Fill the fields
+					label.add-product-form__label Product
+						input(type='text' value='Pineaplle').add-product-form__input.add-product-form__input_Product#poductName
+					label.add-product-form__label Price
+						input(type='number' value='13').add-product-form__input.add-product-form__input_Price#poductPrice
+					label.add-product-form__label Currency
+						input(type='text' value='EUR').add-product-form__input.add-product-form__input_Currency#poductCurrency
+					label.add-product-form__label Quanitity
+						input(type='text' value='3').add-product-form__input.add-product-form__input_Quanitity#poductQuanitity
+					label.add-product-form__label Total
+						input(type='text' value='39').add-product-form__input.add-product-form__input_Total#poductTotal
+					button(type='button').add-product-form__input.add-product-form__input_submit#poductSubmit Add product
+					button(type="button").add-product-form__close#poductCloses
+							i.fa.fa-close
+					
+		script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
 		script(src="js/main.js")
+		

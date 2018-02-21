@@ -1,21 +1,16 @@
 .section-stages{
 	padding: 0;
 	list-style-type: none;
+	display: flex;
 	&__item{
-		display: inline-block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		border-radius: 50%;
 		border: 1px solid #6699ff;
-		height: $icon_size;
-		width: $icon_size;
-		line-height: $icon_size;
 		text-align: center;
-		transition: .3s ease;
 		margin: 0 1rem;
-		&:hover{
-			background-color: #6699ff;
-			.fa{
-				color: #fff;
-			}
+		cursor: pointer;
 		}
 		&:first-child{
 			margin-left: 0;
@@ -24,13 +19,26 @@
 			margin-right: 0;
 		}
 		.fa{
-			font-size: 1.25rem;
+			font-size: 1.60rem;
 			color: #6699ff
 		}
+		&__switch{
+			border: none;
+			background-color: transparent;
+			border-radius: 50%;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: $icon_size;
+			width: $icon_size;
+			line-height: $icon_size;
+			transition: .3s ease;
+			&:hover{
+				background-color: #6699ff;
+				.fa{
+					color: #fff;
+				}
+			}
+		}
 	}
-	&__switch{
-		border: none;
-		background-color: transparent;
-
-	}
-}

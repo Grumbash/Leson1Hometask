@@ -6,8 +6,11 @@
 		padding-bottom: .5rem;
 		border-bottom: 1px solid #ddd;
 	}
-	&__post-info{
-		padding-left: 25%;
-		list-style: none;
+	&__map{
+		img{
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+		}
 	}
 }

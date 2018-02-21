@@ -117,7 +117,11 @@ gulp.task('watch', () => {
 
 gulp.task('server', () => {
 	server.init({
+<<<<<<< HEAD
+		port: 6666,
+=======
 		port: 7080,
+>>>>>>> master
 		server: {
 			baseDir: paths.devDir.serv
 		},
